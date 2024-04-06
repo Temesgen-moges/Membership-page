@@ -1,0 +1,151 @@
+*{
+  margin:0;
+  padding:0;
+  font-family: Poppins;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4.7rem;
+    margin-left: 12rem;
+  }
+
+  .container2{
+    /* margin-bottom: 2rem; */
+    padding-top: 2.5rem;
+     margin-right:23rem;
+     
+ }
+
+  .formContainer {
+    display: flex; /* Add display flex here */
+    flex-direction: column;   /* Set flex direction to column to stack elements vertically */
+    margin-left: 20px; /* Add margin as needed */
+    
+  }
+
+/* .imgContainer{
+    display:flex;
+    position: absolute;
+    margin: 4rem;
+    left:4rem; 
+    background-color: antiquewhite;
+
+} */
+
+.imgContainer {
+    display: flex; /* Fix typo here */
+    position: relative;
+    margin-right: 20px; /* Add margin as needed */
+    /* background-color: rgb(216, 178, 129); */
+  }
+
+.L-img{
+    /* padding: 41px 31px; */
+    width: 500px;
+    height: 500px;
+    background-color: #49BBBD;
+    border-radius: 1rem;
+}
+.img-Text {
+    position: absolute;
+    bottom: 1.5rem; 
+    left: 40px;
+    width: 435px;
+    height: 88px;
+    color: white;
+    padding: 10px;
+    font-size:larger;
+    border-radius: 5px;
+  }
+
+.login-title{
+    font-weight: bold;
+    font-family: Poppins;
+    margin-bottom: 1.5rem;
+    margin-left:40px;
+}
+.buttonContainer{
+    width:260px;
+    height:40px;
+    background-color: lightblue;
+    border-radius:33px;
+    margin-bottom: 35px;
+    margin-left:50px;
+}
+.log-butt{
+    padding-left:27px;    
+    padding-right:27px;
+    border-radius:33px;
+    padding-top:3px;
+    padding-bottom:3px;    
+    background-color: transparent;
+    margin-top:5px;
+    margin-left: 10px;
+    color:white;
+}
+.log-butt:hover{
+    background-color: #49BBBD;
+}
+.reg-butt{
+    margin-left:1.7rem;
+    padding-left:27px;    
+    padding-right:27px;
+    padding-top:3px;
+    padding-bottom:3px;
+    border-radius:33px;
+    background-color: transparent;  
+    color:white;
+}
+.reg-butt:hover{
+    background-color: #49BBBD;
+}
+.userInput{
+margin-left:4px;
+padding: 6px;
+padding-left:20px;
+border-radius: 33px;
+border: 1.5px solid grey; 
+}
+.passInput{
+    margin-left:4px;
+    padding: 6px;
+    padding-left:20px;
+    border-radius: 33px;
+    border: 1.5px solid grey; 
+}
+.reminders{
+padding-left: 10px;
+color: grey;
+}
+.reminders:hover{
+    color:darkgoldenrod;
+}
+.login-butt{
+    width: 150px;
+    /* height:50px; */
+    padding-top: 7px;
+    padding-bottom: 7px;
+    border-radius: 33px;
+    background-color: #49BBBD;
+    color:white;
+    margin-left: 12.5rem;
+    margin-top: 15px;
+}
+.login-butt:hover{
+    color:#3d6d6d;
+    background-color: #0edbdb;
+    /* border: 1px solid #49BBBD; */
+}
+.passwordIcon {
+    position: absolute;
+    right: 17.5rem; /* Adjust the position as needed */
+    top: 68.5%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: grey;
+  }
+  
+
+ 
