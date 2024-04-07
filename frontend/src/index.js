@@ -3,7 +3,7 @@ import './index.css';
 import App from './App';
 import { createRoot } from 'react-dom/client';
 import { ReactKeycloakProvider } from '@react-keycloak/web';
-import keycloaks from './Keycloak'; // Import the useKeycloak hook
+import keycloaks from './middleware/Keycloak'; // Import the useKeycloak hook
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 

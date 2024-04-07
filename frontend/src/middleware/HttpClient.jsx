@@ -1,7 +1,4 @@
-// src/middleware/HttpClient.jsx
-
 import axios from 'axios';
-import { useEffect } from 'react';
 import { useKeycloak } from '@react-keycloak/web';
 
 const HttpClient = () => {
@@ -17,7 +14,6 @@ const HttpClient = () => {
   // Axios interceptor to attach the token to each request
   api.interceptors.request.use(
     (config) => {
-      // Call the custom hook to retrieve the token
       if (keycloak.token) {
         config.headers.Authorization = `Bearer ${keycloak.token}`;
       }
@@ -28,7 +24,7 @@ const HttpClient = () => {
     }
   );
 
-  return api; // Return the configured axios instance
+  return api; 
 
 };
 

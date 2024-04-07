@@ -50,8 +50,8 @@ const RegistrationForm = () => {
                     className='userInput'
                     placeholder='Enter your username' 
                     name='username' 
-                    value={username} // Update value attribute with state variable
-                    onChange={(e) => setUsername(e.target.value)} // Update state variable on change
+                    value={username} 
+                    onChange={(e) => setUsername(e.target.value)} 
                     style={{ fontSize: '14px', marginBottom: '15px' }} 
                 />
                 

@@ -20,7 +20,6 @@ const LoginForm = () => {
         })
         .catch(error => {
             console.error('Keycloak initialization error:', error);
-            // Handle initialization error here, such as displaying an error message to the user
         });
     }, []);
 

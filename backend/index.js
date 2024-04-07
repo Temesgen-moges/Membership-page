@@ -11,15 +11,11 @@ dotenv.config();
 app.use(cors());
 app.use(keycloak.middleware());
 app.use(express.json());
-app.use(express.urlencoded({ extended: true })); // Use express.urlencoded for URL-encoded request bodies
+app.use(express.urlencoded({ extended: true })); 
 
 // Use body-parser middleware
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
-
-app.get("/hello", (req, res) => {
-    res.send("Hello there");
-});
 
 app.use("/user",userRoute)
 app.use("/add",userRoute);
@@ -35,9 +31,6 @@ app.use(errorHandler);
 const PORT = process.env.PORT;
 
 const url= process.env.URI
-const uri="mongodb://127.0.0.1:27017/LuckyNumber"
-console.log("the url is: " + url);
-console.log("the url is: " + PORT);
 mongoose
   .connect(url)
   .then(() => console.log("mongodb connected successfully"))
