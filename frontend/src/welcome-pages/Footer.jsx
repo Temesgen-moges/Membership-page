@@ -12,7 +12,7 @@ const Footer = () => {
             <div className='w-full md:w-1/4'>
                 <h1 className='font-semibold text-xl pb-4'>Game</h1>
                 <p className='text-sm'>I am excited to inform you that this Game
-                 website has been developed by Temesgen.M
+                 website has been developed by T
                 </p>
             </div>
             <div >
@@ -45,7 +45,7 @@ const Footer = () => {
         </div>
         <div>
             <p className='text-center py-4'>
-                @copyright developed by <span className='text-orange-600'>Temesgen M.</span>  All rights reserved
+                @copyright developed by <span className='text-orange-600'>T.</span>  All rights reserved
             </p>
         </div>
     </div>
