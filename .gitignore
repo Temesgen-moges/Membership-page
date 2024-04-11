@@ -23,4 +23,5 @@ yarn-debug.log*
 yarn-error.log*
 
 frontend/node_modules/.cache/default-development/4.pack
+frontend/node_modules/.cache/default-development/4.pack
 
