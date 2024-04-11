@@ -29,4 +29,9 @@ module.exports = {
     },
   },
   plugins: [Myclass],
+  variants:{
+    extend:{
+      dipslay:["focus-group"]
+    }
+  }
 }
