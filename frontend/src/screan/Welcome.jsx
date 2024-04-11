@@ -1,23 +1,67 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import Lottie from 'lottie-react';
-import animationData from './assets/win.json';
-import animationData2 from './assets/win2.json';
+import animationData from '../assets/win.json';
+import animationData2 from '../assets/win2.json';
 import { FaSun, FaMoon, FaMoneyCheck, FaMoneyBill, FaShare } from 'react-icons/fa';
-import Card from './commponent/Card';
-import Footer from './commponent/Footer';
+import Card from '../welcome-pages/Card';
+import Footer from '../welcome-pages/Footer';
+import { useKeycloak } from '@react-keycloak/web';
+import { useNavigate } from 'react-router-dom';
 
- const Welcome = () => {
+const Welcome = () => {
+  const [keycloakInitialized, setKeycloakInitialized] = useState(false);
+  const { keycloak, initialized } = useKeycloak();
   const [darkMode, setDarkMode] = useState(false);
+  const [isLoggedIn, setIsLoggedIn]= useState(false);
+  const navigate = useNavigate();
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
 
+  useEffect(()=>{
+    if (initialized && keycloak.authenticated) {
+      // Access user information after authentication
+      console.log('User ID:', keycloak.idTokenParsed.sub);
+      console.log('User Email:', keycloak.idTokenParsed.email);
+
+      console.log("navigating");
+      navigate("/home");
+  }
+
+  },[initialized, keycloak])
+
+  const handleLogin = () => {
+    if (!keycloak.authenticated) {
+      console.log("user click and  not authenticated");
+      keycloak.login(); 
+
+    } else {
+      console.log("user clicked and authenticated");
+      navigate("/home");
+    }
+  };
+
+  useEffect(() => {
+    if (initialized && keycloak.authenticated) {
+      // Access user information after authentication
+      console.log('User ID:', keycloak.idTokenParsed.sub);
+      console.log('User Email:', keycloak.idTokenParsed.email);
+
+      console.log("navigating");
+      // navigate("/home");
+    }
+    setKeycloakInitialized(true);
+  }, [initialized, keycloak]);
+
+
   return (
     <div className='bg-[#020917] '>
       <div className='rounded-b-3xl rounded-t-3xl border-b-2 mb-10'>
         <div className="text-end pr-20 justify-center pt-[2rem] pb-[4rem]">
-          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transform transition duration-300 ease-in-out hover:scale-110">
+          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transform transition duration-300 ease-in-out hover:scale-110"
+          onClick={handleLogin}
+          >
             Start now
           </button>
           <div className="absolute top-5 right-5 mt-4 mr-4">

@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useKeycloak } from '@react-keycloak/web';
 import HttpClient from '../middleware/HttpClient';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
     const { keycloak, initialized } = useKeycloak(); 
     const api = HttpClient();
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchData = async () => {
@@ -21,6 +23,8 @@ const Home = () => {
 
         if (initialized && keycloak.authenticated) {
             fetchData();
+        }else{
+            navigate("/");
         }
     }, [initialized, keycloak.authenticated]);
 

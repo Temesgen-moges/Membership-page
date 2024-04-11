@@ -38,7 +38,6 @@ const Login = () => {
                             <>
                                 <button className={` ${login ? 'bg-[#49BBBD]' : 'bg-transparent'} log-butt`} onClick={() => {
                                     setLogin(true);
-                                    keycloak.login();
                                 }}>Login</button>
                                 <button className={`reg-butt ${login ? 'bg-transparent' : 'bg-[#49BBBD]'}`} onClick={() => {
                                     setLogin(false);
